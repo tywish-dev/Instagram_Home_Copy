@@ -61,7 +61,7 @@ class _PostCardState extends State<PostCard> {
               IconButton(
                 padding: const EdgeInsets.only(left: 0),
                 onPressed: () {},
-                icon: Icon(Icons.heart_broken_outlined),
+                icon: const Icon(Icons.heart_broken_outlined),
                 iconSize: 30,
                 alignment: Alignment.center,
                 splashColor: Colors.transparent,
