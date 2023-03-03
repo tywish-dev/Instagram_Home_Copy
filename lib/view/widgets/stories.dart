@@ -27,7 +27,7 @@ class _StoryState extends State<Story> {
         const Padding(
           padding: EdgeInsets.only(left: 20, top: 5),
           child: Text(
-            'tywish',
+            'samet',
             style: TextStyle(
               fontSize: 12,
             ),

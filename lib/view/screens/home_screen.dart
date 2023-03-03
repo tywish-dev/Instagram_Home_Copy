@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_home_copy/view/widgets/bottom_bar.dart';
 import 'package:instagram_home_copy/view/widgets/stories.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -50,18 +51,25 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Container(
-        width: size.width,
-        height: 100,
-        decoration: const BoxDecoration(color: Colors.black),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Wrap(
-            direction: Axis.vertical,
-            children: _story,
+      body: SafeArea(
+        child: Container(
+          width: size.width,
+          height: size.height,
+          decoration: const BoxDecoration(color: Colors.black),
+          child: SizedBox(
+            width: size.width,
+            height: 100,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Wrap(
+                direction: Axis.vertical,
+                children: _story,
+              ),
+            ),
           ),
         ),
       ),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }
