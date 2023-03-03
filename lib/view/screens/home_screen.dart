@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_home_copy/view/widgets/bottom_bar.dart';
+import 'package:instagram_home_copy/view/widgets/post_card.dart';
 import 'package:instagram_home_copy/view/widgets/stories.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
           'Instagram',
@@ -51,14 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: SafeArea(
-        child: Container(
-          width: size.width,
-          height: size.height,
-          decoration: const BoxDecoration(color: Colors.black),
-          child: SizedBox(
+      body: ListView(
+        children: [
+          Container(
             width: size.width,
             height: 100,
+            decoration: const BoxDecoration(color: Colors.black),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Wrap(
@@ -67,7 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-        ),
+          const PostCard(),
+        ],
       ),
       bottomNavigationBar: const BottomBar(),
     );
