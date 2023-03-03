@@ -11,6 +11,7 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    bool _hasBeenPressed = false;
     return Card(
       color: Colors.black,
       child: Column(
@@ -60,7 +61,7 @@ class _PostCardState extends State<PostCard> {
               IconButton(
                 padding: const EdgeInsets.only(left: 0),
                 onPressed: () {},
-                icon: const Icon(Icons.heart_broken_outlined),
+                icon: Icon(Icons.heart_broken_outlined),
                 iconSize: 30,
                 alignment: Alignment.center,
                 splashColor: Colors.transparent,
@@ -92,9 +93,21 @@ class _PostCardState extends State<PostCard> {
                 alignment: Alignment.centerRight,
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
-              )
+              ),
             ],
           ),
+          Row(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 10, top: 10, bottom: 30),
+                child: Text(
+                  '200 Dislikes',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

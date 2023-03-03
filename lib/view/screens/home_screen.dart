@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  List<Story> _story = [
+  final List<Story> _story = [
     Story(),
     Story(),
     Story(),
@@ -22,10 +22,22 @@ class _HomeScreenState extends State<HomeScreen> {
     Story(),
     Story(),
   ];
+  final List<PostCard> _postCards = [
+    PostCard(),
+    PostCard(),
+    PostCard(),
+    PostCard(),
+    PostCard(),
+    PostCard(),
+    PostCard(),
+    PostCard(),
+    PostCard(),
+    PostCard()
+  ];
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text(
           'Instagram',
@@ -53,22 +65,29 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          Container(
-            width: size.width,
-            height: 100,
-            decoration: const BoxDecoration(color: Colors.black),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Wrap(
-                direction: Axis.vertical,
-                children: _story,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+                itemCount: _story.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => const Story(),
               ),
             ),
-          ),
-          const PostCard(),
-        ],
+            Flexible(
+              child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: _postCards.length,
+                scrollDirection: Axis.vertical,
+                itemBuilder: (context, index) => const PostCard(),
+              ),
+            )
+          ],
+        ),
       ),
       bottomNavigationBar: const BottomBar(),
     );
