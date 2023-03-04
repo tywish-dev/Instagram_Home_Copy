@@ -14,7 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         width: size.width,
       ),
       title: const Text(
-        'Instagram',
+        'Dislikegram',
         textAlign: TextAlign.start,
       ),
       centerTitle: false,
