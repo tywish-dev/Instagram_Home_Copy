@@ -8,6 +8,7 @@ class PostCard extends StatefulWidget {
 }
 
 class _PostCardState extends State<PostCard> {
+  bool onPressed = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -72,12 +73,20 @@ class _PostCardState extends State<PostCard> {
                     IconButton(
                       // padding: const EdgeInsets.only(left: 0),
                       hoverColor: Colors.transparent,
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          if (onPressed == false
+                              ? onPressed = true
+                              : onPressed = false) ;
+                        });
+                      },
                       icon: const Icon(Icons.heart_broken_outlined),
                       iconSize: 30,
                       alignment: Alignment.center,
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
+
+                      color: onPressed == true ? Colors.red : Colors.white,
                     ),
                     IconButton(
                       // padding: const EdgeInsets.only(left: 0),

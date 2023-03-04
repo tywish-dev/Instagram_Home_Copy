@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Story extends StatefulWidget {
-  const Story({super.key, required this.username});
+  const Story({super.key, this.username, this.imageUrl});
 
-  final String username;
+  final String? username;
+  final String? imageUrl;
 
   @override
   State<Story> createState() => _StoryState();
@@ -19,7 +20,7 @@ class _StoryState extends State<Story> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(100),
             child: Image.asset(
-              'assets/images/me.png',
+              widget.imageUrl!,
               height: 60,
               width: 60,
               fit: BoxFit.cover,
@@ -29,7 +30,7 @@ class _StoryState extends State<Story> {
         Padding(
           padding: const EdgeInsets.only(left: 20, top: 5),
           child: Text(
-            widget.username,
+            widget.username!,
             style: const TextStyle(
               fontSize: 12,
             ),

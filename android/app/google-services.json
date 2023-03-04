@@ -29,6 +29,13 @@
             {
               "client_id": "926107170934-63aurjde1q9dkvfl1nbvb4tjmo7njfj8.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "926107170934-tun6ftu67u7tgu7abhiicdsrb2ooggqe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.instagramHomeCopy"
+              }
             }
           ]
         }

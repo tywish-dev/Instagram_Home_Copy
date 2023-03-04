@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_home_copy/view/widgets/app_bar.dart';
 import 'package:instagram_home_copy/view/widgets/bottom_bar.dart';
@@ -12,44 +14,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final Stream<QuerySnapshot> users =
+      FirebaseFirestore.instance.collection('users').snapshots();
+  Future<String> getDownload(Reference ref) async {
+    return await ref.getDownloadURL();
+  }
+
   @override
+  String _imageUrl = "";
   final List<Story> _story = [
-    Story(
-      username: "samet",
-    ),
-    Story(
-      username: "asd",
-    ),
-    Story(
-      username: "samqweet",
-    ),
-    Story(
-      username: "sa213met",
-    ),
-    Story(
-      username: "same4t",
-    ),
-    Story(
-      username: "d",
-    ),
-    Story(
-      username: "samet",
-    ),
-    Story(
-      username: "samet",
-    ),
+    Story(username: "samet", imageUrl: "assets/images/me.png"),
+    Story(username: "samet", imageUrl: "assets/images/me.png"),
+    Story(username: "samet", imageUrl: "assets/images/me.png"),
+    Story(username: "samet", imageUrl: "assets/images/me.png"),
+    Story(username: "samet", imageUrl: "assets/images/me.png"),
+    Story(username: "samet", imageUrl: "assets/images/me.png"),
+    Story(username: "samet", imageUrl: "assets/images/me.png"),
   ];
   final List<PostCard> _postCards = [
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard()
+    const PostCard(),
+    const PostCard(),
+    const PostCard(),
+    const PostCard(),
+    const PostCard(),
+    const PostCard(),
+    const PostCard(),
+    const PostCard(),
+    const PostCard(),
+    const PostCard()
   ];
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -64,15 +56,15 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             SizedBox(
               height: 100,
-              child: ListView(
+              child: ListView.builder(
+                itemCount: _story.length,
                 scrollDirection: Axis.horizontal,
-                children: _story,
+                itemBuilder: (context, index) {
+                  for (var st in _story) {
+                    return st;
+                  }
+                },
               ),
-              // child: ListView.builder(
-              //   itemCount: _story.length,
-              //   scrollDirection: Axis.horizontal,
-              //   itemBuilder: (context, index) => const Story(username: ,),
-              // ),
             ),
             Flexible(
               child: ListView.builder(

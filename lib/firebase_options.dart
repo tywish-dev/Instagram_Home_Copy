@@ -67,8 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '926107170934',
     projectId: 'instagramhomecopy',
     storageBucket: 'instagramhomecopy.appspot.com',
-    iosClientId:
-        '926107170934-tun6ftu67u7tgu7abhiicdsrb2ooggqe.apps.googleusercontent.com',
+    iosClientId: '926107170934-tun6ftu67u7tgu7abhiicdsrb2ooggqe.apps.googleusercontent.com',
     iosBundleId: 'com.example.instagramHomeCopy',
   );
 
@@ -78,8 +77,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '926107170934',
     projectId: 'instagramhomecopy',
     storageBucket: 'instagramhomecopy.appspot.com',
-    iosClientId:
-        '926107170934-tun6ftu67u7tgu7abhiicdsrb2ooggqe.apps.googleusercontent.com',
+    iosClientId: '926107170934-tun6ftu67u7tgu7abhiicdsrb2ooggqe.apps.googleusercontent.com',
     iosBundleId: 'com.example.instagramHomeCopy',
   );
 }
