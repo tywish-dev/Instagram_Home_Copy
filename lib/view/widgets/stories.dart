@@ -55,7 +55,7 @@ class _StoryState extends State<Story> {
         Padding(
           padding: const EdgeInsets.only(left: 20, top: 5),
           child: Text(
-            widget.username!,
+            widget.username,
             style: const TextStyle(
               fontSize: 12,
             ),

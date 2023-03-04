@@ -15,11 +15,11 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Story> _story = <Story>[
     const Story(
         username: "hanry_bald", imageUrl: "assets/images/profiles/hanry.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
     const Story(
         username: "ellieGolden", imageUrl: "assets/images/profiles/ellie.png"),
     const Story(
         username: "JohnDoe", imageUrl: "assets/images/profiles/john.png"),
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
     const Story(
         username: "keanuR", imageUrl: "assets/images/profiles/keanu.png"),
     const Story(
@@ -29,10 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   final List<PostCard> _postCards = <PostCard>[
     const PostCard(
-        postUrl: 'assets/images/posts/england.jpg',
+        postUrl: 'assets/images/posts/m4.jpg',
         username: 'samet',
         profilePic: "assets/images/profiles/me.png",
-        dislikeCount: 124),
+        dislikeCount: -1000),
     const PostCard(
         postUrl: 'assets/images/posts/carpets.jpg',
         username: 'hanry_bald',
@@ -49,12 +49,12 @@ class _HomeScreenState extends State<HomeScreen> {
         profilePic: 'assets/images/profiles/me.png',
         dislikeCount: 94),
     const PostCard(
-        postUrl: 'assets/images/posts/england.jpg',
+        postUrl: 'assets/images/posts/tower.jpg',
         username: 'aannaa',
         profilePic: 'assets/images/profiles/anna.png',
         dislikeCount: 144),
     const PostCard(
-        postUrl: 'assets/images/posts/tower.jpg',
+        postUrl: 'assets/images/posts/england.jpg',
         username: 'JohnDoe',
         profilePic: 'assets/images/profiles/john.png',
         dislikeCount: 420),

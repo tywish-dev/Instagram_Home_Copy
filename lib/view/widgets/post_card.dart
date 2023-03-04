@@ -68,7 +68,9 @@ class _PostCardState extends State<PostCard> {
             width: size.width,
             child: Image.asset(
               widget.postUrl,
-              width: size.width,
+              height: size.height * 0.5,
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
             ),
           ),
           SizedBox(
@@ -132,7 +134,9 @@ class _PostCardState extends State<PostCard> {
               Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, bottom: 30),
                 child: Text(
-                  '${widget.dislikeCount} Dislikes',
+                  (onPressed == true
+                      ? '${widget.dislikeCount + 1} Dislikes'
+                      : '${widget.dislikeCount} Dislikes'),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 16),
