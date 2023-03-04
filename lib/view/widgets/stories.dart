@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Story extends StatefulWidget {
-  const Story({super.key});
+  const Story({super.key, required this.username});
+
+  final String username;
 
   @override
   State<Story> createState() => _StoryState();
@@ -24,11 +26,11 @@ class _StoryState extends State<Story> {
             ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(left: 20, top: 5),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, top: 5),
           child: Text(
-            'samet',
-            style: TextStyle(
+            widget.username,
+            style: const TextStyle(
               fontSize: 12,
             ),
           ),
