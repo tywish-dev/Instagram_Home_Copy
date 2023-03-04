@@ -46,6 +46,7 @@ class _PostCardState extends State<PostCard> {
                 IconButton(
                   // padding: const EdgeInsets.only(left: 250),
                   onPressed: () {},
+                  hoverColor: Colors.transparent,
                   icon: const Icon(Icons.more_horiz),
                   iconSize: 30,
                   alignment: Alignment.centerRight,
@@ -72,7 +73,7 @@ class _PostCardState extends State<PostCard> {
                   children: [
                     IconButton(
                       // padding: const EdgeInsets.only(left: 0),
-                      enableFeedback: true,
+                      hoverColor: Colors.transparent,
                       onPressed: () {},
                       icon: const Icon(Icons.heart_broken_outlined),
                       iconSize: 30,
@@ -83,6 +84,7 @@ class _PostCardState extends State<PostCard> {
                     IconButton(
                       // padding: const EdgeInsets.only(left: 0),
                       onPressed: () {},
+                      hoverColor: Colors.transparent,
                       icon: const Icon(Icons.comment_outlined),
                       iconSize: 30,
                       alignment: Alignment.center,
@@ -93,6 +95,7 @@ class _PostCardState extends State<PostCard> {
                       // padding: const EdgeInsets.only(left: 0),
                       onPressed: () {},
                       icon: const Icon(Icons.send_outlined),
+                      hoverColor: Colors.transparent,
                       iconSize: 30,
                       alignment: Alignment.center,
                       splashColor: Colors.transparent,
@@ -104,6 +107,7 @@ class _PostCardState extends State<PostCard> {
                   // padding: const EdgeInsets.only(left: 200),
                   onPressed: () {},
                   icon: const Icon(Icons.bookmark_add_outlined),
+                  hoverColor: Colors.transparent,
                   iconSize: 30,
                   alignment: Alignment.centerRight,
                   splashColor: Colors.transparent,

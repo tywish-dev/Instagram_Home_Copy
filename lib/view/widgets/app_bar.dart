@@ -22,6 +22,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       actions: [
         IconButton(
+          hoverColor: Colors.transparent,
           onPressed: () {
             print('Pressed Add Photo Icon Button');
           },
@@ -30,6 +31,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           highlightColor: Colors.transparent,
         ),
         IconButton(
+          hoverColor: Colors.transparent,
           onPressed: () {
             print('Pressed Likes Icon Button');
           },
