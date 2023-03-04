@@ -13,16 +13,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<Story> _story = <Story>[
-    Story(username: "hanry_bald", imageUrl: "assets/images/profiles/hanry.png"),
-    Story(
+    const Story(
+        username: "hanry_bald", imageUrl: "assets/images/profiles/hanry.png"),
+    const Story(
         username: "ellieGolden", imageUrl: "assets/images/profiles/ellie.png"),
-    Story(username: "JohnDoe", imageUrl: "assets/images/profiles/john.png"),
-    Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
-    Story(username: "keanuR", imageUrl: "assets/images/profiles/keanu.png"),
-    Story(username: "aannaa", imageUrl: "assets/images/profiles/anna.png"),
-    Story(username: "Colliss", imageUrl: "assets/images/profiles/collis.png"),
+    const Story(
+        username: "JohnDoe", imageUrl: "assets/images/profiles/john.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    const Story(
+        username: "keanuR", imageUrl: "assets/images/profiles/keanu.png"),
+    const Story(
+        username: "aannaa", imageUrl: "assets/images/profiles/anna.png"),
+    const Story(
+        username: "Colliss", imageUrl: "assets/images/profiles/collis.png"),
   ];
-  final List<PostCard> _postCards = [
+  final List<PostCard> _postCards = <PostCard>[
     const PostCard(
         postUrl: 'assets/images/posts/england.jpg',
         username: 'samet',
@@ -30,49 +35,34 @@ class _HomeScreenState extends State<HomeScreen> {
         dislikeCount: 124),
     const PostCard(
         postUrl: 'assets/images/posts/carpets.jpg',
-        username: 'samet',
+        username: 'hanry_bald',
         profilePic: 'assets/images/profiles/hanry.png',
         dislikeCount: 15),
     const PostCard(
-        postUrl: 'assets/images/posts/structure.jpg',
-        username: 'samet',
-        profilePic: 'assets/images/profiles/keanu.png',
-        dislikeCount: 124),
+        postUrl: 'assets/images/profiles/collis.png',
+        username: 'Colliss',
+        profilePic: 'assets/images/profiles/collis.png',
+        dislikeCount: 340),
     const PostCard(
         postUrl: 'assets/images/posts/dog.jpg',
         username: 'samet',
         profilePic: 'assets/images/profiles/me.png',
-        dislikeCount: 124),
+        dislikeCount: 94),
     const PostCard(
         postUrl: 'assets/images/posts/england.jpg',
-        username: 'samet',
-        profilePic: 'assets/images/profiles/me.png',
-        dislikeCount: 124),
+        username: 'aannaa',
+        profilePic: 'assets/images/profiles/anna.png',
+        dislikeCount: 144),
     const PostCard(
-        postUrl: 'assets/images/posts/england.jpg',
-        username: 'samet',
-        profilePic: 'assets/images/profiles/me.png',
-        dislikeCount: 124),
+        postUrl: 'assets/images/posts/tower.jpg',
+        username: 'JohnDoe',
+        profilePic: 'assets/images/profiles/john.png',
+        dislikeCount: 420),
     const PostCard(
-        postUrl: 'assets/images/posts/england.jpg',
-        username: 'samet',
-        profilePic: 'assets/images/profiles/me.png',
-        dislikeCount: 124),
-    const PostCard(
-        postUrl: 'assets/images/posts/england.jpg',
-        username: 'samet',
-        profilePic: 'assets/images/profiles/me.png',
-        dislikeCount: 124),
-    const PostCard(
-        postUrl: 'assets/images/posts/england.jpg',
-        username: 'samet',
-        profilePic: 'assets/images/profiles/me.png',
-        dislikeCount: 124),
-    const PostCard(
-        postUrl: 'assets/images/posts/england.jpg',
-        username: 'samet',
-        profilePic: 'assets/images/profiles/me.png',
-        dislikeCount: 124),
+        postUrl: 'assets/images/posts/car.jpg',
+        username: 'keanuR',
+        profilePic: 'assets/images/profiles/keanu.png',
+        dislikeCount: 91),
   ];
   @override
   Widget build(BuildContext context) {
