@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 class PostCard extends StatefulWidget {
-  const PostCard({super.key});
+  const PostCard(
+      {super.key,
+      required this.postUrl,
+      required this.username,
+      required this.profilePic,
+      required this.dislikeCount});
+
+  final String postUrl;
+  final String username;
+  final String profilePic;
+  final int dislikeCount;
 
   @override
   State<PostCard> createState() => _PostCardState();
@@ -26,24 +36,23 @@ class _PostCardState extends State<PostCard> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(100),
                       child: Image.asset(
-                        'assets/images/profiles/me.png',
+                        widget.profilePic,
                         height: 30,
                         width: 30,
                         fit: BoxFit.cover,
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
                       child: Text(
-                        'samet',
+                        widget.username,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16),
+                        style: const TextStyle(fontSize: 16),
                       ),
                     ),
                   ],
                 ),
                 IconButton(
-                  // padding: const EdgeInsets.only(left: 250),
                   onPressed: () {},
                   hoverColor: Colors.transparent,
                   icon: const Icon(Icons.more_horiz),
@@ -58,7 +67,7 @@ class _PostCardState extends State<PostCard> {
           SizedBox(
             width: size.width,
             child: Image.asset(
-              'assets/images/profiles/me.png',
+              widget.postUrl,
               width: size.width,
             ),
           ),
@@ -71,7 +80,6 @@ class _PostCardState extends State<PostCard> {
                 Row(
                   children: [
                     IconButton(
-                      // padding: const EdgeInsets.only(left: 0),
                       hoverColor: Colors.transparent,
                       onPressed: () {
                         setState(() {
@@ -85,11 +93,9 @@ class _PostCardState extends State<PostCard> {
                       alignment: Alignment.center,
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
-
                       color: onPressed == true ? Colors.red : Colors.white,
                     ),
                     IconButton(
-                      // padding: const EdgeInsets.only(left: 0),
                       onPressed: () {},
                       hoverColor: Colors.transparent,
                       icon: const Icon(Icons.comment_outlined),
@@ -99,7 +105,6 @@ class _PostCardState extends State<PostCard> {
                       highlightColor: Colors.transparent,
                     ),
                     IconButton(
-                      // padding: const EdgeInsets.only(left: 0),
                       onPressed: () {},
                       icon: const Icon(Icons.send_outlined),
                       hoverColor: Colors.transparent,
@@ -111,7 +116,6 @@ class _PostCardState extends State<PostCard> {
                   ],
                 ),
                 IconButton(
-                  // padding: const EdgeInsets.only(left: 200),
                   onPressed: () {},
                   icon: const Icon(Icons.bookmark_add_outlined),
                   hoverColor: Colors.transparent,
@@ -125,12 +129,13 @@ class _PostCardState extends State<PostCard> {
           ),
           Row(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 10, top: 10, bottom: 30),
+              Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10, bottom: 30),
                 child: Text(
-                  '200 Dislikes',
+                  '${widget.dislikeCount} Dislikes',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 16),
                 ),
               ),
             ],

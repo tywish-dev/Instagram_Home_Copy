@@ -24,16 +24,56 @@ class _HomeScreenState extends State<HomeScreen> {
     const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
   ];
   final List<PostCard> _postCards = [
-    const PostCard(),
-    const PostCard(),
-    const PostCard(),
-    const PostCard(),
-    const PostCard(),
-    const PostCard(),
-    const PostCard(),
-    const PostCard(),
-    const PostCard(),
-    const PostCard()
+    const PostCard(
+        postUrl: 'assets/images/posts/england.jpg',
+        username: 'samet',
+        profilePic: "assets/images/profiles/me.png",
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/carpets.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/hanry.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/structure.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/keanu.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/dog.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/me.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/england.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/me.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/england.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/me.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/england.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/me.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/england.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/me.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/england.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/me.png',
+        dislikeCount: 124),
+    const PostCard(
+        postUrl: 'assets/images/posts/england.jpg',
+        username: 'samet',
+        profilePic: 'assets/images/profiles/me.png',
+        dislikeCount: 124),
   ];
   @override
   Widget build(BuildContext context) {
