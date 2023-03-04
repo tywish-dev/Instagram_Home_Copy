@@ -18,6 +18,7 @@ class PostCard extends StatefulWidget {
 }
 
 class _PostCardState extends State<PostCard> {
+  bool savePress = false;
   bool onPressed = false;
   @override
   Widget build(BuildContext context) {
@@ -87,10 +88,12 @@ class _PostCardState extends State<PostCard> {
                         setState(() {
                           if (onPressed == false
                               ? onPressed = true
-                              : onPressed = false) ;
+                              : onPressed = false) {}
                         });
                       },
-                      icon: const Icon(Icons.heart_broken_outlined),
+                      icon: onPressed == true
+                          ? const Icon(Icons.heart_broken)
+                          : const Icon(Icons.heart_broken_outlined),
                       iconSize: 30,
                       alignment: Alignment.center,
                       splashColor: Colors.transparent,
@@ -118,8 +121,35 @@ class _PostCardState extends State<PostCard> {
                   ],
                 ),
                 IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.bookmark_add_outlined),
+                  onPressed: () {
+                    setState(() {
+                      if (savePress == false) {
+                        savePress = true;
+                      } else {
+                        savePress = false;
+                      }
+                    });
+                    final snackBar = SnackBar(
+                      backgroundColor: Colors.black,
+                      content: const Text(
+                        'You bookmarked this post!',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                      action: SnackBarAction(
+                        textColor: Colors.white,
+                        label: 'Undo',
+                        onPressed: () {
+                          setState(() {
+                            savePress = false;
+                          });
+                        },
+                      ),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  },
+                  icon: savePress == true
+                      ? const Icon(Icons.bookmark_add)
+                      : const Icon(Icons.bookmark_add_outlined),
                   hoverColor: Colors.transparent,
                   iconSize: 30,
                   alignment: Alignment.centerRight,
