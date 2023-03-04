@@ -17,14 +17,39 @@ class _StoryState extends State<Story> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 20, top: 10),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(100),
-            child: Image.asset(
-              widget.imageUrl!,
-              height: 60,
-              width: 60,
-              fit: BoxFit.cover,
-            ),
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: Container(
+                  width: 68,
+                  height: 68,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                      colors: [
+                        Colors.red.withOpacity(1),
+                        Colors.blue.withOpacity(1)
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(4),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
+                  child: Image.asset(
+                    widget.imageUrl!,
+                    height: 60,
+                    width: 60,
+                    alignment: Alignment.center,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
         Padding(
