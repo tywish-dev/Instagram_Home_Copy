@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_home_copy/view/screens/home_screen.dart';
+import 'package:instagram_home_copy/view/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       themeMode: ThemeMode.dark,
-      home: const HomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }
