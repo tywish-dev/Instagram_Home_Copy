@@ -1,17 +1,9 @@
 # instagram_home_copy
 
-A new Flutter project.
+## Get Started
 
-## Getting Started
+This project is just a copy home page of Instagram converted Dislikegram.
 
-This project is a starting point for a Flutter application.
+<img src="https://i.hizliresim.com/bjftdp2.png" width="450"/> 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 # Instagram_Home_Copy
