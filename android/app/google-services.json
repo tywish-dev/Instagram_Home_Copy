@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "926107170934",
+    "project_id": "instagramhomecopy",
+    "storage_bucket": "instagramhomecopy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926107170934:android:c847961b20aa4688ed8757",
+        "android_client_info": {
+          "package_name": "com.example.instagram_home_copy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926107170934-63aurjde1q9dkvfl1nbvb4tjmo7njfj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMlzCj1TswbZJDmYuSrEHI4nfY0C-7eok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926107170934-63aurjde1q9dkvfl1nbvb4tjmo7njfj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
