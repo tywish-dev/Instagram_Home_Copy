@@ -32,7 +32,7 @@ class BottomBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.play_circle_outline),
+              icon: const Icon(Icons.add_a_photo_outlined),
               iconSize: 36,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
@@ -40,7 +40,7 @@ class BottomBar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.message_outlined),
+              icon: const Icon(Icons.play_circle_outline),
               iconSize: 36,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
@@ -49,7 +49,7 @@ class BottomBar extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(100),
               child: Image.asset(
-                'assets/images/me.png',
+                'assets/images/profiles/me.png',
                 height: 40,
                 width: 40,
                 fit: BoxFit.cover,

@@ -26,7 +26,7 @@ class _PostCardState extends State<PostCard> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(100),
                       child: Image.asset(
-                        'assets/images/me.png',
+                        'assets/images/profiles/me.png',
                         height: 30,
                         width: 30,
                         fit: BoxFit.cover,
@@ -58,7 +58,7 @@ class _PostCardState extends State<PostCard> {
           SizedBox(
             width: size.width,
             child: Image.asset(
-              'assets/images/me.png',
+              'assets/images/profiles/me.png',
               width: size.width,
             ),
           ),

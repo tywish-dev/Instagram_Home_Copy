@@ -14,22 +14,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final Stream<QuerySnapshot> users =
-      FirebaseFirestore.instance.collection('users').snapshots();
-  Future<String> getDownload(Reference ref) async {
-    return await ref.getDownloadURL();
-  }
-
-  @override
-  String _imageUrl = "";
   final List<Story> _story = [
-    Story(username: "samet", imageUrl: "assets/images/me.png"),
-    Story(username: "samet", imageUrl: "assets/images/me.png"),
-    Story(username: "samet", imageUrl: "assets/images/me.png"),
-    Story(username: "samet", imageUrl: "assets/images/me.png"),
-    Story(username: "samet", imageUrl: "assets/images/me.png"),
-    Story(username: "samet", imageUrl: "assets/images/me.png"),
-    Story(username: "samet", imageUrl: "assets/images/me.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
   ];
   final List<PostCard> _postCards = [
     const PostCard(),
@@ -43,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const PostCard(),
     const PostCard()
   ];
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -72,7 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 shrinkWrap: true,
                 itemCount: _postCards.length,
                 scrollDirection: Axis.vertical,
-                itemBuilder: (context, index) => const PostCard(),
+                itemBuilder: (context, index) {
+                  for (var pC in _postCards) {
+                    return pC;
+                  }
+                },
               ),
             )
           ],
