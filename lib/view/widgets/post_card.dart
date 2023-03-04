@@ -12,7 +12,6 @@ class PostCard extends StatefulWidget {
 class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
-    Color _iconColor = Colors.white;
     Size size = MediaQuery.of(context).size;
     return Card(
       color: Colors.black,
@@ -46,12 +45,7 @@ class _PostCardState extends State<PostCard> {
                 ),
                 IconButton(
                   // padding: const EdgeInsets.only(left: 250),
-                  color: _iconColor,
-                  onPressed: () {
-                    setState(() {
-                      _iconColor = Colors.red;
-                    });
-                  },
+                  onPressed: () {},
                   icon: const Icon(Icons.more_horiz),
                   iconSize: 30,
                   alignment: Alignment.centerRight,
