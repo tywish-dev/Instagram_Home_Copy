@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_home_copy/view/widgets/app_bar.dart';
 import 'package:instagram_home_copy/view/widgets/bottom_bar.dart';
@@ -14,14 +12,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<Story> _story = [
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
-    const Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+  final List<Story> _story = <Story>[
+    Story(username: "hanry_bald", imageUrl: "assets/images/profiles/hanry.png"),
+    Story(
+        username: "ellieGolden", imageUrl: "assets/images/profiles/ellie.png"),
+    Story(username: "JohnDoe", imageUrl: "assets/images/profiles/john.png"),
+    Story(username: "samet", imageUrl: "assets/images/profiles/me.png"),
+    Story(username: "keanuR", imageUrl: "assets/images/profiles/keanu.png"),
+    Story(username: "aannaa", imageUrl: "assets/images/profiles/anna.png"),
+    Story(username: "Colliss", imageUrl: "assets/images/profiles/collis.png"),
   ];
   final List<PostCard> _postCards = [
     const PostCard(
@@ -33,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         postUrl: 'assets/images/posts/carpets.jpg',
         username: 'samet',
         profilePic: 'assets/images/profiles/hanry.png',
-        dislikeCount: 124),
+        dislikeCount: 15),
     const PostCard(
         postUrl: 'assets/images/posts/structure.jpg',
         username: 'samet',
@@ -77,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: CustomAppBar(
@@ -93,9 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: _story.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  for (var st in _story) {
-                    return st;
-                  }
+                  return _story[index];
                 },
               ),
             ),
@@ -106,9 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: _postCards.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
-                  for (var pC in _postCards) {
-                    return pC;
-                  }
+                  return _postCards[index];
                 },
               ),
             )

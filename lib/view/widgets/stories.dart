@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Story extends StatefulWidget {
-  const Story({super.key, this.username, this.imageUrl});
+  const Story({super.key, required this.username, required this.imageUrl});
 
-  final String? username;
-  final String? imageUrl;
+  final String username;
+  final String imageUrl;
 
   @override
   State<Story> createState() => _StoryState();
@@ -41,7 +41,7 @@ class _StoryState extends State<Story> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(100),
                   child: Image.asset(
-                    widget.imageUrl!,
+                    widget.imageUrl,
                     height: 60,
                     width: 60,
                     alignment: Alignment.center,
