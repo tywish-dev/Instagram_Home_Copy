@@ -50,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: size.width * 0.7,
                   child: TextField(
+                    keyboardType: TextInputType.datetime,
                     controller: _username,
                     enableSuggestions: false,
                     decoration: const InputDecoration(
@@ -61,6 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: size.width * 0.7,
                   child: TextField(
+                    keyboardType: TextInputType.datetime,
                     controller: _password,
                     obscureText: true,
                     enableSuggestions: false,
