@@ -37,8 +37,8 @@ class _BottomBarState extends State<BottomBar> {
                 });
               },
               icon: homePress == true
-                  ? const Icon(Icons.home)
-                  : const Icon(Icons.home_outlined),
+                  ? const Icon(Icons.home_outlined)
+                  : const Icon(Icons.home),
               iconSize: 36,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
@@ -48,7 +48,7 @@ class _BottomBarState extends State<BottomBar> {
                 setState(() {
                   if (searchPress == false) {
                     searchPress = true;
-                    homePress = false;
+                    homePress = true;
                     photoPress = false;
                     playPress = false;
                   } else {
@@ -68,7 +68,7 @@ class _BottomBarState extends State<BottomBar> {
                 setState(() {
                   if (photoPress == false) {
                     photoPress = true;
-                    homePress = false;
+                    homePress = true;
                     searchPress = false;
                     playPress = false;
                   } else {
@@ -88,7 +88,7 @@ class _BottomBarState extends State<BottomBar> {
                 setState(() {
                   if (playPress == false) {
                     playPress = true;
-                    homePress = false;
+                    homePress = true;
                     searchPress = false;
                     photoPress = false;
                   } else {
