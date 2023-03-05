@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'package:instagram_home_copy/view/screens/camera_screen.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key, required this.appBar});
@@ -23,8 +25,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           hoverColor: Colors.transparent,
-          onPressed: () {
-            print('Pressed Add Photo Icon Button');
+          onPressed: () async {
+            await availableCameras().then((value) => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => CameraScreen(cameras: value))));
           },
           icon: const Icon(Icons.add_a_photo_outlined),
           splashColor: Colors.transparent,
@@ -32,9 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         IconButton(
           hoverColor: Colors.transparent,
-          onPressed: () {
-            print('Pressed Likes Icon Button');
-          },
+          onPressed: () {},
           icon: const Icon(Icons.heart_broken_outlined),
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
