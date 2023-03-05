@@ -80,6 +80,19 @@ class _LoginScreenState extends State<LoginScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const SplashScreen()));
+                      } else {
+                        const snackBar = SnackBar(
+                          backgroundColor: Colors.black,
+                          content: Text(
+                            'Wrong username or password!',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       }
                     });
                   },
