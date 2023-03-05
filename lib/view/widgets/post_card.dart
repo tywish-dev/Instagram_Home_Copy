@@ -67,11 +67,16 @@ class _PostCardState extends State<PostCard> {
           ),
           SizedBox(
             width: size.width,
-            child: Image.asset(
-              widget.postUrl,
-              height: size.height * 0.5,
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
+            child: InteractiveViewer(
+              panEnabled: false, // Set it to false
+              minScale: 0.35,
+              maxScale: 3,
+              child: Image.asset(
+                widget.postUrl,
+                height: size.height * 0.5,
+                fit: BoxFit.cover,
+                alignment: Alignment.center,
+              ),
             ),
           ),
           SizedBox(
