@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_home_copy/view/screens/story_preview.dart';
 
 class Story extends StatefulWidget {
   const Story({super.key, required this.username, required this.imageUrl});
@@ -40,12 +41,23 @@ class _StoryState extends State<Story> {
                 padding: const EdgeInsets.all(4),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(100),
-                  child: Image.asset(
-                    widget.imageUrl,
-                    height: 60,
-                    width: 60,
-                    alignment: Alignment.center,
-                    fit: BoxFit.cover,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return StoryPreview(picUrl: widget.imageUrl);
+                      }));
+                    },
+                    child: Hero(
+                      tag: 'story',
+                      child: Image.asset(
+                        widget.imageUrl,
+                        height: 60,
+                        width: 60,
+                        alignment: Alignment.center,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
               ),
