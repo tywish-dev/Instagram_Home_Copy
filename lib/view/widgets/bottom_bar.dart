@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_home_copy/view/screens/home_screen.dart';
 import 'package:instagram_home_copy/view/screens/profile_screen.dart';
 
 class BottomBar extends StatefulWidget {
-  const BottomBar({super.key, required this.profilePress});
+  const BottomBar(
+      {super.key, required this.profilePress, required this.outOfHome});
   final bool profilePress;
+  final bool outOfHome;
   @override
   State<BottomBar> createState() => _BottomBarState();
 }
@@ -24,26 +27,56 @@ class _BottomBarState extends State<BottomBar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            IconButton(
-              onPressed: () {
-                setState(() {
-                  if (homePress == false) {
-                    homePress = true;
-                    searchPress = false;
-                    photoPress = false;
-                    playPress = false;
-                  } else {
-                    homePress = false;
-                  }
-                });
-              },
-              icon: homePress == true
-                  ? const Icon(Icons.home_outlined)
-                  : const Icon(Icons.home),
-              iconSize: 36,
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-            ),
+            if (widget.outOfHome == false)
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    if (homePress == false) {
+                      homePress = true;
+                      searchPress = false;
+                      photoPress = false;
+                      playPress = false;
+                    } else {
+                      homePress = false;
+                    }
+                  });
+                },
+                icon: homePress == true
+                    ? const Icon(Icons.home_outlined)
+                    : const Icon(Icons.home),
+                iconSize: 36,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+            if (widget.outOfHome == true)
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    if (homePress == false) {
+                      homePress = true;
+                      searchPress = false;
+                      photoPress = false;
+                      playPress = false;
+                    } else {
+                      homePress = false;
+                    }
+                  });
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const HomeScreen();
+                      },
+                    ),
+                  );
+                },
+                icon: homePress == true
+                    ? const Icon(Icons.home)
+                    : const Icon(Icons.home_outlined),
+                iconSize: 36,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
             IconButton(
               onPressed: () {
                 setState(() {
