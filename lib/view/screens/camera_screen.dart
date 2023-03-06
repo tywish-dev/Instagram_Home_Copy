@@ -1,16 +1,19 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-class CameraScreen extends StatefulWidget {
-  const CameraScreen({Key? key, required this.cameras}) : super(key: key);
+import 'camera_preview.dart';
+
+class CameraPage extends StatefulWidget {
+  const CameraPage({Key? key, required this.cameras}) : super(key: key);
 
   final List<CameraDescription>? cameras;
 
   @override
-  State<CameraScreen> createState() => _CameraScreenState();
+  State<CameraPage> createState() => _CameraPageState();
 }
 
-class _CameraScreenState extends State<CameraScreen> {
+class _CameraPageState extends State<CameraPage> {
   late CameraController _cameraController;
   bool _isRearCameraSelected = true;
 
@@ -35,13 +38,13 @@ class _CameraScreenState extends State<CameraScreen> {
     }
     try {
       await _cameraController.setFlashMode(FlashMode.off);
-      // XFile picture = await _cameraController.takePicture();
-      // Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //         builder: (context) => PreviewPage(
-      //               picture: picture,
-      //             )));
+      XFile picture = await _cameraController.takePicture();
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => PreviewPage(
+                    picture: picture,
+                  )));
     } on CameraException catch (e) {
       debugPrint('Error occured while taking picture: $e');
       return null;
@@ -86,8 +89,8 @@ class _CameraScreenState extends State<CameraScreen> {
                   iconSize: 30,
                   icon: Icon(
                       _isRearCameraSelected
-                          ? Icons.switch_camera
-                          : Icons.switch_camera_outlined,
+                          ? CupertinoIcons.switch_camera
+                          : CupertinoIcons.switch_camera_solid,
                       color: Colors.white),
                   onPressed: () {
                     setState(

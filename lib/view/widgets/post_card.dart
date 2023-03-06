@@ -68,7 +68,6 @@ class _PostCardState extends State<PostCard> {
           SizedBox(
             width: size.width,
             child: InteractiveViewer(
-              panEnabled: false, // Set it to false
               minScale: 0.35,
               maxScale: 3,
               child: Image.asset(

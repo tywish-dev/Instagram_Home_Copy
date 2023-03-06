@@ -26,10 +26,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           hoverColor: Colors.transparent,
           onPressed: () async {
-            await availableCameras().then((value) => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (_) => CameraScreen(cameras: value))));
+            await availableCameras().then((value) => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => CameraPage(cameras: value))));
           },
           icon: const Icon(Icons.add_a_photo_outlined),
           splashColor: Colors.transparent,
