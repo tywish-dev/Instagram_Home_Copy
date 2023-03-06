@@ -96,25 +96,26 @@ class _ProfileTopState extends State<ProfileTop> {
             height: size.height * 0.09,
             alignment: Alignment.bottomCenter,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:
-                        const MaterialStatePropertyAll(Colors.black),
+                    backgroundColor: const MaterialStatePropertyAll(
+                        Color.fromARGB(255, 35, 35, 35)),
                     splashFactory: NoSplash.splashFactory,
                     minimumSize: MaterialStatePropertyAll(
-                        Size(size.width * 0.45, size.width * 0.085)),
+                        Size(size.width * 0.44, size.width * 0.085)),
                   ),
                   onPressed: () {},
                   child: const Text('Edit Profile'),
                 ),
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:
-                        const MaterialStatePropertyAll(Colors.black),
+                    backgroundColor: const MaterialStatePropertyAll(
+                        Color.fromARGB(255, 35, 35, 35)),
                     splashFactory: NoSplash.splashFactory,
                     minimumSize: MaterialStatePropertyAll(
-                        Size(size.width * 0.45, size.width * 0.085)),
+                        Size(size.width * 0.44, size.width * 0.085)),
                   ),
                   onPressed: () {},
                   child: const Text('Share Profile'),
@@ -127,8 +128,8 @@ class _ProfileTopState extends State<ProfileTop> {
                       borderRadius: BorderRadius.circular(5)),
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor:
-                          const MaterialStatePropertyAll(Colors.black),
+                      backgroundColor: const MaterialStatePropertyAll(
+                          Color.fromARGB(255, 35, 35, 35)),
                       splashFactory: NoSplash.splashFactory,
                       minimumSize: MaterialStatePropertyAll(
                           Size(size.width * 0.45, size.width * 0.085)),

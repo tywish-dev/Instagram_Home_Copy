@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_home_copy/view/widgets/bottom_bar.dart';
+import 'package:instagram_home_copy/view/widgets/profile_tab_bar.dart';
 import 'package:instagram_home_copy/view/widgets/profile_top.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -17,8 +18,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
       ),
-      body: const ProfileTop(
-        picUrl: "assets/images/profiles/me.png",
+      body: Column(
+        children: const [
+          ProfileTop(
+            picUrl: "assets/images/profiles/me.png",
+          ),
+          ProfileTabBar(),
+        ],
       ),
       bottomNavigationBar: const BottomBar(
         profilePress: false,
