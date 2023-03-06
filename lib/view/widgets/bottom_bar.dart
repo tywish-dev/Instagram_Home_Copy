@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_home_copy/view/screens/profile_screen.dart';
 
 class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
-
+  const BottomBar({super.key, required this.profilePress});
+  final bool profilePress;
   @override
   State<BottomBar> createState() => _BottomBarState();
 }
@@ -105,11 +106,25 @@ class _BottomBarState extends State<BottomBar> {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(100),
-              child: Image.asset(
-                'assets/images/profiles/me.png',
-                height: 36,
-                width: 36,
-                fit: BoxFit.cover,
+              child: GestureDetector(
+                onTap: () {
+                  if (widget.profilePress == true) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const ProfileScreen();
+                        },
+                      ),
+                    );
+                  }
+                },
+                child: Image.asset(
+                  'assets/images/profiles/me.png',
+                  height: 36,
+                  width: 36,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ],
