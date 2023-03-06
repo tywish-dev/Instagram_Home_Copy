@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_home_copy/view/widgets/popup_menu.dart';
 
 class PostCard extends StatefulWidget {
   const PostCard(
@@ -20,6 +21,7 @@ class PostCard extends StatefulWidget {
 class _PostCardState extends State<PostCard> {
   bool savePress = false;
   bool onPressed = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -53,15 +55,17 @@ class _PostCardState extends State<PostCard> {
                     ),
                   ],
                 ),
-                IconButton(
-                  onPressed: () {},
-                  hoverColor: Colors.transparent,
-                  icon: const Icon(Icons.more_horiz),
-                  iconSize: 30,
-                  alignment: Alignment.centerRight,
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                )
+                PopUpMenuButton(),
+                // IconButton(
+                //   onPressed: () {
+                //   },
+                //   hoverColor: Colors.transparent,
+                //   icon: const Icon(Icons.more_horiz),
+                //   iconSize: 30,
+                //   alignment: Alignment.centerRight,
+                //   splashColor: Colors.transparent,
+                //   highlightColor: Colors.transparent,
+                // )
               ],
             ),
           ),
