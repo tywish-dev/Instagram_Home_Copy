@@ -25,7 +25,7 @@ class _PopUpMenuButtonState extends State<PopUpMenuButton> {
           value: MoreItems.share,
           child: Row(
             children: const [
-              Icon(Icons.share),
+              Icon(Icons.share_outlined),
               SizedBox(
                 width: 5,
               ),
