@@ -21,7 +21,7 @@ class PostCard extends StatefulWidget {
 class _PostCardState extends State<PostCard> {
   bool savePress = false;
   bool onPressed = false;
-
+  bool _isLiked = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -55,7 +55,7 @@ class _PostCardState extends State<PostCard> {
                     ),
                   ],
                 ),
-                PopUpMenuButton(),
+                const PopUpMenuButton(),
                 // IconButton(
                 //   onPressed: () {
                 //   },
@@ -69,19 +69,41 @@ class _PostCardState extends State<PostCard> {
               ],
             ),
           ),
-          SizedBox(
-            width: size.width,
-            child: InteractiveViewer(
-              minScale: 0.35,
-              maxScale: 3,
-              child: Image.asset(
-                widget.postUrl,
-                height: size.height * 0.5,
-                fit: BoxFit.cover,
-                alignment: Alignment.center,
+          Stack(children: [
+            SizedBox(
+              width: size.width,
+              child: InteractiveViewer(
+                minScale: 0.35,
+                maxScale: 3,
+                child: GestureDetector(
+                  onDoubleTap: () {
+                    setState(() {
+                      _isLiked = !_isLiked;
+                    });
+                  },
+                  child: Image.asset(
+                    widget.postUrl,
+                    height: size.height * 0.5,
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
+                  ),
+                ),
               ),
             ),
-          ),
+            SizedBox(
+              width: size.width,
+              height: size.height * 0.5,
+              child: Align(
+                  alignment: Alignment.center,
+                  child: _isLiked == true
+                      ? const Icon(
+                          Icons.heart_broken,
+                          size: 120,
+                          color: Colors.white,
+                        )
+                      : Container()),
+            ),
+          ]),
           SizedBox(
             width: size.width,
             height: 50,
@@ -99,7 +121,7 @@ class _PostCardState extends State<PostCard> {
                               : onPressed = false) {}
                         });
                       },
-                      icon: onPressed == true
+                      icon: onPressed == true || _isLiked == true
                           ? const Icon(Icons.heart_broken)
                           : const Icon(Icons.heart_broken_outlined),
                       iconSize: 30,
@@ -172,7 +194,7 @@ class _PostCardState extends State<PostCard> {
               Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, bottom: 30),
                 child: Text(
-                  (onPressed == true
+                  (onPressed == true || _isLiked == true
                       ? '${widget.dislikeCount + 1} Dislikes'
                       : '${widget.dislikeCount} Dislikes'),
                   textAlign: TextAlign.center,
