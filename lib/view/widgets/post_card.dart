@@ -116,9 +116,15 @@ class _PostCardState extends State<PostCard> {
                       hoverColor: Colors.transparent,
                       onPressed: () {
                         setState(() {
-                          if (onPressed == false
-                              ? onPressed = true
-                              : onPressed = false) {}
+                          // if (onPressed == false
+                          //     ? onPressed = true
+                          //     : onPressed = false _isLiked=false) {}
+                          if (onPressed == false) {
+                            onPressed = true;
+                          } else {
+                            onPressed = false;
+                            _isLiked = false;
+                          }
                         });
                       },
                       icon: onPressed == true || _isLiked == true
@@ -128,7 +134,9 @@ class _PostCardState extends State<PostCard> {
                       alignment: Alignment.center,
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
-                      color: onPressed == true ? Colors.red : Colors.white,
+                      color: onPressed == true || _isLiked == true
+                          ? Colors.red
+                          : Colors.white,
                     ),
                     IconButton(
                       onPressed: () {},
