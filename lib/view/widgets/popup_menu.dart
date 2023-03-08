@@ -46,6 +46,21 @@ class _PopUpMenuButtonState extends State<PopUpMenuButton> {
           ),
         ),
         PopupMenuItem<MoreItems>(
+          onTap: () {
+            final snackBar = SnackBar(
+              backgroundColor: Colors.black,
+              content: const Text(
+                'You bookmarked this post!',
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+              action: SnackBarAction(
+                textColor: Colors.white,
+                label: 'Undo',
+                onPressed: () {},
+              ),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          },
           value: MoreItems.save,
           child: Row(
             children: const [
