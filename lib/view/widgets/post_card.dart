@@ -23,6 +23,7 @@ class _PostCardState extends State<PostCard> {
   bool savePress = false;
   bool onPressed = false;
   bool _isLiked = false;
+  bool _visible = true;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -67,7 +68,16 @@ class _PostCardState extends State<PostCard> {
                 minScale: 0.35,
                 maxScale: 3,
                 child: GestureDetector(
-                  onDoubleTap: () {
+                  onDoubleTap: () async {
+                    if (_visible = true) {
+                      Future.delayed(const Duration(milliseconds: 2500), () {
+                        if (mounted) {
+                          setState(() {
+                            _visible = !_visible;
+                          });
+                        }
+                      });
+                    }
                     setState(() {
                       _isLiked = !_isLiked;
                     });
@@ -87,15 +97,16 @@ class _PostCardState extends State<PostCard> {
               child: Align(
                   alignment: Alignment.center,
                   child: _isLiked == true
-                      ? LottieBuilder.network(
-                          'https://assets10.lottiefiles.com/packages/lf20_ldhvscz7.json',
-                          repeat: false,
+                      ? Visibility(
+                          visible: _visible,
+                          maintainSize: true,
+                          maintainAnimation: true,
+                          maintainState: true,
+                          child: LottieBuilder.network(
+                            'https://assets10.lottiefiles.com/packages/lf20_ldhvscz7.json',
+                            repeat: false,
+                          ),
                         )
-                      // ? const Icon(
-                      //     Icons.heart_broken,
-                      //     size: 120,
-                      //     color: Colors.white,
-                      //   )
                       : Container()),
             ),
           ]),
