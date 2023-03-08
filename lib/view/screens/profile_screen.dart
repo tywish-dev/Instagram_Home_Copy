@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:instagram_home_copy/view/widgets/bottom_bar.dart';
 import 'package:instagram_home_copy/view/widgets/profile_tab_bar.dart';
 import 'package:instagram_home_copy/view/widgets/profile_top.dart';
 
@@ -15,9 +14,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-      ),
       body: Column(
         children: const [
           ProfileTop(
@@ -25,10 +21,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           ProfileTabBar(),
         ],
-      ),
-      bottomNavigationBar: const BottomBar(
-        profilePress: false,
-        outOfHome: true,
       ),
     );
   }
