@@ -14,6 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   late TextEditingController _username;
   late TextEditingController _password;
   bool _isLoggedIn = false;
+  bool _isVisible = false;
 
   @override
   void initState() {
@@ -62,9 +63,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: size.width * 0.7,
                   child: TextField(
-                    keyboardType: TextInputType.datetime,
                     controller: _password,
-                    obscureText: true,
+                    obscureText: !_isVisible,
                     enableSuggestions: false,
                     decoration: const InputDecoration(
                       labelText: 'Password',

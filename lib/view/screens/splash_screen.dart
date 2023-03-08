@@ -11,7 +11,7 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-bool isLoggedIn = true;
+bool isLoggedIn = false;
 
 class _SplashScreenState extends State<SplashScreen> {
   @override

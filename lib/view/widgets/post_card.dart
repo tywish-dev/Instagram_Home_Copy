@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_home_copy/view/widgets/popup_menu.dart';
+import 'package:lottie/lottie.dart';
 
 class PostCard extends StatefulWidget {
   const PostCard(
@@ -56,16 +57,6 @@ class _PostCardState extends State<PostCard> {
                   ],
                 ),
                 const PopUpMenuButton(),
-                // IconButton(
-                //   onPressed: () {
-                //   },
-                //   hoverColor: Colors.transparent,
-                //   icon: const Icon(Icons.more_horiz),
-                //   iconSize: 30,
-                //   alignment: Alignment.centerRight,
-                //   splashColor: Colors.transparent,
-                //   highlightColor: Colors.transparent,
-                // )
               ],
             ),
           ),
@@ -96,11 +87,15 @@ class _PostCardState extends State<PostCard> {
               child: Align(
                   alignment: Alignment.center,
                   child: _isLiked == true
-                      ? const Icon(
-                          Icons.heart_broken,
-                          size: 120,
-                          color: Colors.white,
+                      ? LottieBuilder.network(
+                          'https://assets10.lottiefiles.com/packages/lf20_ldhvscz7.json',
+                          repeat: false,
                         )
+                      // ? const Icon(
+                      //     Icons.heart_broken,
+                      //     size: 120,
+                      //     color: Colors.white,
+                      //   )
                       : Container()),
             ),
           ]),
@@ -116,9 +111,6 @@ class _PostCardState extends State<PostCard> {
                       hoverColor: Colors.transparent,
                       onPressed: () {
                         setState(() {
-                          // if (onPressed == false
-                          //     ? onPressed = true
-                          //     : onPressed = false _isLiked=false) {}
                           if (onPressed == false) {
                             onPressed = true;
                           } else {
